@@ -14,7 +14,8 @@ module.exports = function(api) {
           "@Screens": "./src/screens",
           "@Stores": "./src/stores",
           "@Assets": "./assets",
-          "@Utils": "./src/utils"
+          "@Utils": "./src/utils",
+          "@Constant": "./src/constants",
         },
         "extensions": [
           ".js",

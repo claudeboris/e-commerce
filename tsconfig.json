@@ -20,7 +20,8 @@
       "@Screens/*": ["src/screens/*"],
       "@Stores/*": ["src/stores/*"],
       "@Assets/*": ["assets/*"],
-      "@Utils/*": ["src/utils/*"]
+      "@Utils/*": ["src/utils/*"],
+      "@Constants/*": ["src/constants/*"]
     }
 
   }

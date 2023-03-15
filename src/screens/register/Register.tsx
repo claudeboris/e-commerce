@@ -1,47 +1,62 @@
-import React from "react";
+import React, { useState } from "react";
 import { Text, View, StyleSheet } from "react-native";
 import Constants from 'expo-constants';
 import { TextInput, Button, Avatar } from 'react-native-paper';
 
 export default function Register(props: any) {
+
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [isTextVisible, setIsTextVisible] = useState(false);
+
+    const handleIconPress = () => {
+        setIsTextVisible(!isTextVisible);
+    };
+
     return (
         <View style={styles.container}>
             <View style={styles.header}>
             </View>
             <View style={styles.footer}>
-                <Avatar.Image style={styles.image} size={150} source={require('../../../assets/favicon.png')} />
+                <Avatar.Image style={styles.image} size={150} source={require('../../../assets/images/cnts.png')} />
                 <View style={{marginTop: 35}}>
                 <TextInput
                     style={styles.textInput}
                     label="Name"
-                    value=""
-                    textColor="#e84118"
-                    outlineColor="#e84118"
+                    //value=""
+                    theme={{ colors: { primary: '#fbc531', placeholder: '#fbc531', }, }}
+                    textColor="#fbc531"
+                    outlineColor="#fbc531"
                     mode="outlined" 
-                    //onChangeText={text => setText(text)}
+                    onChangeText={text => setName(text)}
                     />
-                    <TextInput
+                   <TextInput
                     style={styles.textInput}
                     label="Email"
-                    value=""
-                    textColor="#e84118"
-                    outlineColor="#e84118"
+                    //value=""
+                    theme={{ colors: { primary: '#fbc531', placeholder: '#fbc531', }, }}
+                    textColor="#fbc531"
+                    outlineColor="#fbc531"
                     mode="outlined" 
-                    //onChangeText={text => setText(text)}
+                    onChangeText={text => setEmail(text)}
                     />
                     <TextInput
                     style={styles.textInput}
                     label="Password"
-                    value=""
-                    textColor="#e84118"
-                    outlineColor="#e84118"
+                    //value=""
+                    theme={{ colors: { primary: '#fbc531', placeholder: '#fbc531', }, }}
+                    textColor="#fbc531"
+                    outlineColor="#fbc531"
+                    secureTextEntry={!isTextVisible} // masquer ou afficher le texte saisi en fonction de l'état
+                    right={<TextInput.Icon icon={isTextVisible ? 'eye-off' : 'eye'} onPress={handleIconPress} />}
                     mode="outlined" 
-                    //onChangeText={text => setText(text)}
+                    onChangeText={text => setPassword(text)}
                     />
-                    <Button mode="contained" style={styles.textInput} buttonColor="#e84118" onPress={() => console.log('Pressed')}>
+                    <Button mode="contained" style={styles.register} buttonColor="#fbc531" onPress={() => console.log('Pressed')}>
                         S'inscrire
                     </Button>
-                    <Button mode="outlined" style={styles.button_outlined} textColor="#e84118"  onPress={() => props.navigation.navigate('Login')}>
+                    <Button mode="outlined" style={styles.button_outlined} textColor="#fbc531"  onPress={() => props.navigation.navigate('Login')}>
                         Se connecter
                     </Button>
                 </View>
@@ -54,7 +69,7 @@ const styles = StyleSheet.create({
     container: {
       flex: 1,
       marginTop: Constants.statusBarHeight,
-      backgroundColor: '#e84118',
+      backgroundColor: '#F53920',
     },
     header: {
         flex: .7,
@@ -80,11 +95,15 @@ const styles = StyleSheet.create({
         paddingHorizontal: 30,
         //elevation: 1,
     },
-    textInput: {
+    register: {
         marginBottom: 20
     },
+    textInput: {
+        marginBottom: 20,
+        backgroundColor: 'white'
+    },
     button_outlined: {
-        borderColor:'#e84118'
+        borderColor:'#fbc531'
     },
     forgot_passe: {
         display: 'flex',
