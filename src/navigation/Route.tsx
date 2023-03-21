@@ -16,7 +16,7 @@ const MainStackScreen = () => {
       <MainStack.Screen name="Login" component={Login} options={{title:'login', headerShown: false}} />
       <MainStack.Screen name="Register" component={Register} options={{title:'register', headerShown: false}} />
       <MainStack.Screen name="ResetPassword" component={ResetPassword} options={{title:'ResetPassword', headerShown: false}} />
-      <MainStack.Screen name="OuDonner" component={DrawerNavigator} options={{title:'OuDonner', headerShown: false}} />
+      <MainStack.Screen name="Or Donate" component={DrawerNavigator} options={{title:'OuDonner', headerShown: false}} />
     </MainStack.Navigator>
   );
 }

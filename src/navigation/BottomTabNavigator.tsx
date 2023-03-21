@@ -40,7 +40,8 @@ function TabNavigation(props: any) {
         })}
     >
       <Tab.Screen name="Où donner" component={Home} options={{
-        title:'Où donner',
+        headerShown: false,
+        //title:'Où donner',
         headerLeft: () => {
             return (
               <TouchableOpacity onPress={() => navigation.openDrawer()} activeOpacity={1} >
@@ -49,9 +50,9 @@ function TabNavigation(props: any) {
             );
           },
      }} />
-      <Tab.Screen name="Puis-je donner" component={Profile} />
-      <Tab.Screen name="Notifications" component={Notification} />
-      <Tab.Screen name="Mes RDV" component={Setting} />
+      <Tab.Screen name="Puis-je donner" component={Profile} options={{title:'Puis-je donner', headerShown: false}} />
+      <Tab.Screen name="Notifications" component={Notification} options={{title:'Notifications', headerShown: false}} />
+      <Tab.Screen name="Mes RDV" component={Setting} options={{title:'Mes RDV', headerShown: false}} />
     </Tab.Navigator> 
   );
 }

@@ -14,7 +14,7 @@ export default function Login(props: any) {
     }
 
     const onLoginPress = (e: any) => {
-        props.navigation.navigate('OuDonner')
+        props.navigation.navigate('Or Donate')
     }
 
     const handleIconPress = () => {
