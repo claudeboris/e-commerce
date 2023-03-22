@@ -3,12 +3,13 @@ import { Image, Text, View, StyleSheet } from "react-native";
 import { createDrawerNavigator, DrawerContentScrollView, DrawerItem, DrawerItemList } from '@react-navigation/drawer';
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import AntDesign from 'react-native-vector-icons/AntDesign'
-import Icon from 'react-native-vector-icons/Ionicons';
+//import Icon from 'react-native-vector-icons/Ionicons';
 import Entypo from 'react-native-vector-icons/Entypo'
 import BottomTabNavigator from "./BottomTabNavigator";
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Color from "@Utils/Color";
 import { Avatar, Caption, Switch, Title, TouchableRipple, useTheme } from "react-native-paper";
+import FaireDon from "@Screens/faireDon/FaireDon";
 
 const Drawer = createDrawerNavigator();
 
@@ -38,20 +39,36 @@ function CustomDrawerContent(props: any) {
           </View>
           {/* <DrawerItemList {...props} />   */}
           <View>
-         {/*  <View style={{paddingVertical: 100}}>
+           <View style={{paddingVertical: 50}}>
             <DrawerItem 
                 icon={({color, size}) => (
-                    <Icon 
-                    name="home-outline" 
+                  <Entypo name="drop" size={20} color="black" /> 
+                )}
+                label="Faire un don"
+                onPress={() => {props.navigation.navigate('Faire un don')}}
+            />
+            <DrawerItem 
+                icon={({color, size}) => (
+                    <AntDesign 
+                    name="setting" 
                     color={color}
                     size={size}
                     />
                 )}
-                label="Home"
+                label="Paramètre"
                 onPress={() => {props.navigation.navigate('Home')}}
             />
-          </View> */}
           </View>
+          </View>
+          <View>
+              <Text style={{marginLeft: 5}}>Preférences</Text>
+              <View style={styles.preference}>
+                  <Text>Couleur noir</Text>
+                  <View pointerEvents="none">
+                      <Switch value={paperTheme.dark}/>
+                  </View>
+              </View>
+            </View>
           {/* <TouchableRipple onPress={() => console.log('ok')}>
             <View>
               <Text>Preferences</Text>
@@ -96,7 +113,7 @@ function DrawerNavigate() {
       <Drawer.Screen name="OuDonner" component={BottomTabNavigator} options={{
           title: 'OuDonner',
           drawerIcon: ({focused, color, size}) => (
-            <Icon name="home-sharp" size={18} color={color} />
+            <Ionicons name="home-sharp" size={18} color={color} />
           ),
         }} />
     </Drawer.Navigator>

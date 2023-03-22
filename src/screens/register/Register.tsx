@@ -68,7 +68,7 @@ export default function Register(props: any) {
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      marginTop: Constants.statusBarHeight,
+      //marginTop: Constants.statusBarHeight,
       backgroundColor: '#F53920',
     },
     header: {

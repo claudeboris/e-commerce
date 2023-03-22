@@ -6,6 +6,7 @@ import Splash from "@Screens/Splash";
 import Register from "@Screens/register/Register";
 import ResetPassword from "@Screens/resetPassword/ResetPassword"
 import DrawerNavigator from "./DrawerNavigator";
+import FaireDon from "@Screens/faireDon/FaireDon";
 
 const MainStack = createStackNavigator();
 
@@ -17,6 +18,7 @@ const MainStackScreen = () => {
       <MainStack.Screen name="Register" component={Register} options={{title:'register', headerShown: false}} />
       <MainStack.Screen name="ResetPassword" component={ResetPassword} options={{title:'ResetPassword', headerShown: false}} />
       <MainStack.Screen name="Or Donate" component={DrawerNavigator} options={{title:'OuDonner', headerShown: false}} />
+      <MainStack.Screen name="Faire un don" component={FaireDon} options={{title:'Faire un don', headerShown: false}} />
     </MainStack.Navigator>
   );
 }

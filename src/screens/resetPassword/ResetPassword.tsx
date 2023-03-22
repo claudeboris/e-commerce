@@ -45,7 +45,7 @@ export default ResetPassword
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      marginTop: Constants.statusBarHeight,
+     // marginTop: Constants.statusBarHeight,
       backgroundColor: '#F53920',
     },
     header: {

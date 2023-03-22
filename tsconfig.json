@@ -24,5 +24,6 @@
       "@Constants/*": ["src/constants/*"]
     }
 
-  }
+  },
+  "typeRoots": ["./types"]
 }

@@ -14,6 +14,7 @@ import {useNavigation} from '@react-navigation/native';
 import { Image } from 'react-native';
 import { Avatar } from 'react-native-paper';
 import Notification from '@Screens/notification/Notification';
+import PuiJeDonner from '@Screens/puisJeDonner/PuisJeDonner';
 
 const Tab = createBottomTabNavigator();
 
@@ -50,7 +51,7 @@ function TabNavigation(props: any) {
             );
           },
      }} />
-      <Tab.Screen name="Puis-je donner" component={Profile} options={{title:'Puis-je donner', headerShown: false}} />
+      <Tab.Screen name="Puis-je donner" component={PuiJeDonner} options={{title:'Puis-je donner', headerShown: false}} />
       <Tab.Screen name="Notifications" component={Notification} options={{title:'Notifications', headerShown: false}} />
       <Tab.Screen name="Mes RDV" component={Setting} options={{title:'Mes RDV', headerShown: false}} />
     </Tab.Navigator> 

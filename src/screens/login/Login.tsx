@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Text, View, StyleSheet } from "react-native";
 import Constants from 'expo-constants';
 import { TextInput, Button, Avatar } from 'react-native-paper';
+import LinearGradient from 'react-native-linear-gradient'
 
 export default function Login(props: any) {
 
@@ -68,7 +69,7 @@ export default function Login(props: any) {
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      marginTop: Constants.statusBarHeight,
+      //marginTop: Constants.statusBarHeight,
       backgroundColor: '#F53920',
     },
     header: {
